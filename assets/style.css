@@ -1,0 +1,608 @@
+/* style.css - Common styles for Pixel Dash */
+:root {
+  --primary: #6a11cb;
+  --secondary: #2575fc;
+  --dark: #1a1a2e;
+  --light: #f8f9fa;
+  --accent: #00ff9d;
+}
+
+body {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--light);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 80px; /* For fixed navbar */
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 60px 0 40px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #fff, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  opacity: 0.9;
+}
+
+/* Card Styles */
+.card-container {
+  padding: 40px 0 80px;
+}
+
+.game-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin: 25px 0 15px;
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  opacity: 0.8;
+  line-height: 1.6;
+  padding: 0 15px;
+}
+
+.card-btn {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  border: none;
+  border-radius: 50px;
+  padding: 10px 30px;
+  margin: 20px 0 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.card-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+/* Pixel Art */
+.pixel-art {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pixel-art::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.game-card:hover .pixel-art::before {
+  transform: translateX(100%);
+}
+
+.pixel-character {
+  width: 80px;
+  height: 100px;
+  background: var(--accent);
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+  animation: float 3s ease-in-out infinite;
+}
+
+.pixel-character::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  background: #1a1a2e;
+  top: -15px;
+  left: 10px;
+  border-radius: 50%;
+}
+
+.pixel-character::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  background: #1a1a2e;
+  bottom: -5px;
+  left: 30px;
+  border-radius: 50%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Badge */
+.feature-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--accent);
+  color: var(--dark);
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(26, 26, 46, 0.9);
+  padding: 30px 0;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.social-icons a {
+  color: var(--light);
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* About Page Specific Styles */
+.team-section {
+  padding: 60px 0;
+}
+
+.team-member-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.team-member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent);
+}
+
+.member-role {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.member-description {
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  color: var(--light);
+  font-size: 1.2rem;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.mission-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 40px 0;
+}
+
+.mission-icon {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #fff, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.university-badge {
+  background: rgba(0, 255, 157, 0.1);
+  color: var(--accent);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-block;
+  border: 1px solid var(--accent);
+}
+
+.pixel-divider {
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  margin: 60px 0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Login Container */
+.login-container {
+  background: rgba(26, 26, 46, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.login-header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(to right, #fff, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-subtitle {
+  opacity: 0.9;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.login-body {
+  padding: 40px 30px;
+}
+
+/* Form Styles */
+.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: var(--light);
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 255, 157, 0.1);
+  color: var(--light);
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-group-text {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--accent);
+  border-right: none;
+}
+
+/* Button Styles */
+.btn-login {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  border: none;
+  border-radius: 10px;
+  padding: 12px 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  margin-top: 10px;
+  color: white;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to right, var(--secondary), var(--primary));
+  color: white;
+}
+
+.btn-register {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.btn-register:hover {
+  background: var(--accent);
+  color: var(--dark);
+  transform: translateY(-2px);
+}
+
+/* Form Options */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.form-check-input:checked {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.forgot-link {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.forgot-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Login Footer */
+.login-footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.social-login {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  background: var(--accent);
+  color: var(--dark);
+  transform: translateY(-3px);
+}
+
+/* Body adjustments for login page */
+body.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Labels */
+.form-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: var(--light);
+}
+
+/* Register-specific styles */
+.login-container.register-container {
+  max-width: 500px;
+}
+
+.password-strength {
+  margin-top: 10px;
+}
+
+.progress {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+/* Form text adjustments */
+.form-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* Checkbox styling */
+.form-check-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.form-check-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.form-check-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.25rem rgba(0, 255, 157, 0.25);
+}
+
+/* Benefits section */
+.login-footer .row {
+  margin-top: 15px;
+}
+
+.login-footer .col-4 {
+  padding: 10px;
+}
+
+/* Button adjustments for register */
+.btn-outline-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--accent);
+  border-left: none;
+}
+
+.btn-outline-secondary:hover {
+  background: var(--accent);
+  color: var(--dark);
+  border-color: var(--accent);
+}
+
+/* Form row spacing */
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.col-md-6 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .card-container {
+    padding: 20px 0 60px;
+  }
+  
+  .hero-section {
+    padding: 40px 0 20px;
+  }
+  
+  body {
+    padding-top: 70px;
+  }
+
+  /* Login responsive */
+  .login-container {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+  
+  .login-title {
+    font-size: 2rem;
+  }
+  
+  .login-body {
+    padding: 30px 20px;
+  }
+
+  /* Register responsive */
+  .login-container.register-container {
+    max-width: 100%;
+  }
+  
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .col-md-6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
